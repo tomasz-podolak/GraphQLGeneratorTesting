@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net9</TargetFramework>
+        <GraphQlClientGenerator_ServiceUrl>https://api.tarkov.dev/graphql</GraphQlClientGenerator_ServiceUrl>
+        <GraphQlClientGenerator_Namespace>GraphQLGeneratorTesting</GraphQlClientGenerator_Namespace>
+        <GraphQlClientGenerator_OutputType>OneClassPerFile</GraphQlClientGenerator_OutputType>
+        <GraphQlClientGenerator_IdTypeMapping>String</GraphQlClientGenerator_IdTypeMapping>
+        <GraphQlClientGenerator_FileScopedNamespaces>true</GraphQlClientGenerator_FileScopedNamespaces>
+        <GraphQlClientGenerator_PartialClasses>true</GraphQlClientGenerator_PartialClasses>
+    </PropertyGroup>
+
+    <ItemGroup>
+
+
+        <!-- AdditionalFiles and GraphQlClientGenerator_ServiceUrl are mutually exclusive -->
+        <!-- schema file name must end with ".gql.schema.json" -->
+
+        <PackageReference Include="GraphQlClientGenerator" Version="0.9.25" IncludeAssets="analyzers" />
+
+        <CompilerVisibleProperty Include="GraphQlClientGenerator_ServiceUrl" />
+        <CompilerVisibleProperty Include="GraphQlClientGenerator_Namespace" />
+        <CompilerVisibleProperty Include="GraphQlClientGenerator_OutputType" />
+        <CompilerVisibleProperty Include="GraphQlClientGenerator_IdTypeMapping" />
+        <CompilerVisibleProperty Include="GraphQlClientGenerator_FileScopedNamespaces" />
+        <CompilerVisibleProperty Include="GraphQlClientGenerator_PartialClasses" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <!-- other configuration properties -->
+        <!--<CompilerVisibleProperty Include="GraphQlClientGenerator_{ConfigurationProperty}" />-->
+    </ItemGroup>
+
+    <!--
+    <ItemGroup>
+      <None Remove="graphql.gql.schema.json" />
+      <AdditionalFiles Include="graphql.gql.schema.json" />
+      <None Remove="RegexScalarFieldTypeMappingProvider.gql.config.json" />
+      <AdditionalFiles Include="RegexScalarFieldTypeMappingProvider.gql.config.json" />
+    </ItemGroup>
+    -->
+</Project>
